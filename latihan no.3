@@ -1,0 +1,110 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+void masukan(int i) {
+
+	if (i == 1) {
+		cout << " Satu ";
+	}
+	else if (i == 2) {
+		cout << " Dua ";
+	}
+	else if (i == 3) {
+		cout << " Tiga ";
+	}
+	else if (i == 4) {
+		cout << " Empat ";
+	}
+	else if (i == 5) {
+		cout << " Lima ";
+	}
+	else if (i == 6) {
+		cout << " Enam ";
+	}
+	else if (i == 7) {
+		cout << " Tujuh ";
+	}
+	else if (i == 8) {
+		cout << " Delapan ";
+	}
+	else if (i == 9) {
+		cout << " Sembilan ";
+	}
+	else if (i == 10) {
+		cout << " Sepuluh ";
+	}
+	else if (i == 11) {
+		cout << " Sebelas ";
+	}
+}
+
+void keluaran(int h) {
+
+	if (h <= 11) {
+		masukan(h);
+	}
+	else if ((h > 11) && (h <= 19)) {
+		keluaran(h % 10);
+		cout << "Belas ";
+	}
+	else if ((h >= 20) && (h <= 99)) {
+		keluaran(h / 10);
+		cout << "Puluh";
+		keluaran(h % 10);
+	}
+	else if ((h >= 100) && (h <= 199)) {
+		cout << "Seratus";
+		keluaran(h % 100);
+	}
+	else if ((h >= 200) && (h <= 999)) {
+		keluaran(h / 100);
+		cout << "Ratus";
+		keluaran(h % 100);
+	}
+	else if ((h >= 1000) && (h <= 1999)) {
+		cout << "Seribu";
+		keluaran(h % 1000);
+	}
+	else if ((h >= 2000) && (h <= 9999)) {
+		keluaran(h / 1000);
+		cout << "Ribu";
+		keluaran(h % 1000);
+	}
+	else if ((h >= 10000) && (h <= 99999)) {
+		keluaran(h / 1000);
+		cout << "Ribu";
+		keluaran(h % 1000);
+	}
+	else if ((h >= 100000) && (h <= 999999)) {
+		keluaran(h / 1000);
+		cout << "Ribu";
+		keluaran(h % 1000);
+	}
+	else if ((h == 1000000)) {
+		keluaran(h / 1000000);
+		cout << "Juta";
+		keluaran(h % 1000000);
+	}
+	else if ((h > 1000000)) {
+		cout << "ERROR\n";
+		cout << "nilai yang Anda masukan melampaui batas";
+	}
+}
+
+int main() {
+	int nilai;
+	cout << "Masukkan Bilangan: ";
+	cin >> nilai;
+
+	if (nilai < 0) {
+		cout << "Minus ";
+		keluaran((nilai));
+	}
+	else {
+		keluaran(nilai);
+	}
+	cout << "\n============================\n";
+	return 0;
+}
