@@ -1,0 +1,39 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+void bunga(float a, float i, float n);
+
+void bunga(float a, float i, float n) {
+	float j=0, x,y;
+	for (float z = 1; z <= n; z++) {
+		x= 0;
+		if (z == 1) {
+			x = 1 + (i / 100);
+			j = j + x;
+		} 
+		if(z >1){
+			x = 1 + (i / 100);
+			y = z;
+			x =(x, i);
+			j = j + x;
+		}
+	}
+	float total;
+	total = a * j;
+	cout << "saldo anda menjadi : " << total;
+
+}
+
+int main() {
+	float a,i,n;
+	cout << "Masukkan jumlah saldo anda : ";
+	cin >> a;
+	cout << "Berapa tahun anda menabung? : ";
+	cin >> n;
+	cout << "Bunga tahunan (%) : ";
+	cin >> i;
+	cout << endl;
+	bunga(a, i, n);
+  return 0;
+}
